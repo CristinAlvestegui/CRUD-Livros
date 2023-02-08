@@ -4,10 +4,14 @@
   require_once('DAO/Conexao.php');
   require_once('DAO/InEndere.php');
   require_once('DAO/ConsuEndere.php');
+  require_once('DAO/InPessoa.php');
+  require_once('DAO/ConsuPessoa.php');
 
   use Livraria\PHP\Modelo\DAO\Conexao;
   use Livraria\PHP\Modelo\DAO\InEndere;
   use Livraria\PHP\Modelo\DAO\ConsuEndere;
+  use Livraria\PHP\Modelo\DAO\InPessoa;
+  use Livraria\PHP\Modelo\DAO\ConsuPessoa;
   //use PHP\Modelo\Cliente;
 
   /*
@@ -43,8 +47,14 @@
 echo "********** Teste Banco de Dados ***********";
 $entrar = new Conexao();
 $entrar->conectar();
-$cadas = new InEndere();
+/*$cadas = new InEndere();
 echo $cadas->cadastrar($entrar, "Address", "Av Bolivia", "265","Apto. 2", 46848, "Baeta Neves", "São Bernardo do Campo", "São Paulo", "SP", "Brasil");
 $verEnde = new ConsuEndere();
 echo $verEnde->consuTudo($entrar , "Address");
+*/
+$cli = new InPessoa();
+echo $cli->cadastrar($entrar, "Pessoa", "Cristina", "11950275306", "05/11/1989" , "cristi", "123456789");
+
+$verCli = new ConsuPessoa();
+echo $verCli->consuTudo($entrar, "Pessoa");
 ?>

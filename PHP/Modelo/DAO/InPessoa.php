@@ -7,7 +7,7 @@
 
     class InPessoa{
         
-        public function cadastrar(Conexao $conex, string $Pessoa, string $nome, string $tele, date $nasci, string $login, string $senha){
+        public function cadastrar(Conexao $conex, string $Pessoa, string $nome, string $tele, string $nasci, string $login, string $senha){
             try{
                 $conn = $conex->conectar();//Fazendo conexão com a base de dados
                 $sql = "insert into $Pessoa (codigo, nome, tele, nasci, login, senha) values ('','$nome','$tele','$nasci','$login','$senha')";//Comando script do MySQL para inserir na tabela é nessa ordem que vai ser preenchida nossa tabela!!!!
